@@ -23,6 +23,9 @@
       <nuxt-link to="/login">
         Heyo
       </nuxt-link>
+      <nuxt-link to="/test">
+        test
+      </nuxt-link>
     </div>
   </section>
 </template>

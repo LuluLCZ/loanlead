@@ -1,66 +1,69 @@
 <template>
-  <div class="container">
-    <b-form v-if="show" @submit="onSubmit" @reset="onReset">
-      <b-form-group
-        id="exampleInputGroup1"
-        class="mt-4"
-        label="Email address:"
-        label-for="exampleInput1"
-        description="We'll never share your email with anyone else."
-      >
-        <b-form-input
-          id="exampleInput1"
-          v-model="form.email"
-          type="email"
-          required
-          placeholder="Enter email"
-        />
-      </b-form-group>
+  <b-container>
+    <b-card
+      img-src="https://picsum.photos/600/300/?image=25"
+      img-alt="Image"
+      img-top
+      tag="article"
+      style="max-width: 20rem;"
+    >
+      <b-form v-if="show" @submit="onSubmit">
+        <b-form-group
+          id="exampleInputGroup1"
+          class="labels"
+          label="Adresse mail"
+          label-for="exampleInput1"
+        >
+          <b-form-input
+            id="exampleInput1"
+            v-model="form.email"
+            type="email"
+            required
+            placeholder="example@gmail.com"
+          />
+        </b-form-group>
 
-      <b-form-group id="exampleInputGroup2" label="Your Name:" label-for="exampleInput2">
-        <b-form-input
-          id="exampleInput2"
-          v-model="form.name"
-          type="text"
-          required
-          placeholder="Enter name"
-        />
-      </b-form-group>
+        <b-form-group
+          id="password"
+          class="labels"
+          label="Votre mot de passe"
+          label-for="password"
+        >
+          <b-form-input
+            id="password"
+            v-model="form.password"
+            type="password"
+            required
+            placeholder="Mot de passe"
+          />
+        </b-form-group>
 
-      <b-form-group id="exampleInputGroup3" label="Food:" label-for="exampleInput3">
-        <b-form-select id="exampleInput3" v-model="form.food" :options="foods" required />
-      </b-form-group>
-
-      <b-form-group id="exampleGroup4">
-        <b-form-checkbox-group id="exampleChecks" v-model="form.checked">
-          <b-form-checkbox value="me">
-            Check me out
-          </b-form-checkbox>
-          <b-form-checkbox value="that">
-            Check that out
-          </b-form-checkbox>
-        </b-form-checkbox-group>
-      </b-form-group>
-
-      <b-button type="submit" variant="primary">
-        Submit
-      </b-button>
-      <b-button type="reset" variant="danger">
-        Reset
-      </b-button>
-    </b-form>
-  </div>
+        <b-button type="submit" variant="light">
+          Se connecter
+        </b-button>
+      </b-form>
+      <div class="row mt-2">
+        <nuxt-link to="/signup" class="col-6 link-undecorated">
+          Je n'ai pas de compte
+        </nuxt-link>
+        <nuxt-link to="/forget" class="col-6 link-undecorated">
+          J'ai oublié mon mot de passe
+        </nuxt-link>
+      </div>
+    </b-card>
+  </b-container>
 </template>
 
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
+  layout: 'navbar',
   data() {
     return {
       form: {
         email: '',
-        name: '',
+        password: '',
         food: null,
         checked: []
       },
@@ -78,20 +81,20 @@ export default {
     onSubmit(evt) {
       evt.preventDefault()
       alert(JSON.stringify(this.form))
-    },
-    onReset(evt) {
-      evt.preventDefault()
-      /* Reset our form values */
-      this.form.email = ''
-      this.form.name = ''
-      this.form.food = null
-      this.form.checked = []
-      /* Trick to reset/clear native browser form validation state */
-      this.show = false
-      this.$nextTick(() => {
-        this.show = true
-      })
     }
   }
 }
 </script>
+
+<style>
+.link-undecorated {
+  text-decoration: none !important;
+  color: #35495e;
+}
+
+.labels {
+  color: #35495e;
+  text-align: left;
+  font-size: 14px;
+}
+</style>

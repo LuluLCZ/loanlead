@@ -36,7 +36,7 @@ export default {
 <style>
 .container {
   margin: 0 auto;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - 57px) !important;
   display: flex;
   justify-content: center;
   align-items: center;

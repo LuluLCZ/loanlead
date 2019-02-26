@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark" sticky>
-      <b-navbar-brand href="#">
+      <b-navbar-brand nuxt-link to="/">
         NavBar
       </b-navbar-brand>
 
@@ -9,11 +9,11 @@
 
       <b-collapse id="nav_collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#">
-            Link
+          <b-nav-item nuxt-link to="/">
+            S'inscrire
           </b-nav-item>
-          <b-nav-item href="#" disabled>
-            Disabled
+          <b-nav-item nuxt-link to="/login">
+            Se connecter
           </b-nav-item>
         </b-navbar-nav>
 
@@ -27,17 +27,11 @@
           </b-nav-form>
 
           <b-nav-item-dropdown text="Lang" right>
-            <b-dropdown-item href="#">
+            <b-dropdown-item to="#">
               EN
             </b-dropdown-item>
-            <b-dropdown-item href="#">
-              ES
-            </b-dropdown-item>
-            <b-dropdown-item href="#">
-              RU
-            </b-dropdown-item>
-            <b-dropdown-item href="#">
-              FA
+            <b-dropdown-item to="#">
+              FR
             </b-dropdown-item>
           </b-nav-item-dropdown>
 
@@ -48,11 +42,15 @@
                 User
               </em>
             </template>
-            <b-dropdown-item href="#">
-              Profile
+            <b-dropdown-item>
+              <nuxt-link to="/login">
+                Sign In
+              </nuxt-link>
             </b-dropdown-item>
-            <b-dropdown-item href="#">
-              Signout
+            <b-dropdown-item>
+              <nuxt-link to="/Signup">
+                Signout
+              </nuxt-link>
             </b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -63,4 +61,12 @@
 </template>
 
 <style>
+.container {
+  margin: 0 auto;
+  min-height: calc(100vh - 57px) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 </style>

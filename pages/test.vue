@@ -1,42 +1,42 @@
 <template>
-  <section>
-    <b-container class="container">
+  <b-container class="container">
+    <div>
+      <h1 class="title">
+        Project test
+      </h1>
+      <h2 class="subtitle">
+        subtitles
+      </h2>
       <div>
-        <h1 class="title">
-          Bienvenue sur SEALOAN
-        </h1>
-        <h2 class="subtitle">
-          subtitlse
-        </h2>
-        <div>
-          <b-row>
-            <b-col>
-              <b-button variant="outline-primary">
-                Poster une annonce
-              </b-button>
-            </b-col>
-            <b-col>
-              <b-button variant="outline-primary">
-                Chercher une annonce
-              </b-button>
-            </b-col>
-          </b-row>
-        </div>
+        <b-row>
+          <b-col>
+            <b-button variant="outline-primary">
+              Poster une annonce
+            </b-button>
+          </b-col>
+          <b-col>
+            <b-button variant="outline-primary">
+              Chercher une annonce
+            </b-button>
+          </b-col>
+        </b-row>
       </div>
-    </b-container>
-  </section>
+    </div>
+  </b-container>
 </template>
 
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-export default {}
+export default {
+  layout: 'navbar'
+}
 </script>
 
 <style>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
   display: flex;
   justify-content: center;
   align-items: center;

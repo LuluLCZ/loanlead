@@ -2,11 +2,8 @@
   <b-container>
     <b-card
       header="Nom du projet"
-      img-src="https://picsum.photos/600/300/?image=25"
-      img-alt="Image"
-      img-mid
       tag="article"
-      style="max-width: 30rem;"
+      style="width: 30rem;"
     >
       <b-form v-if="show" @submit="onSubmit">
         <b-form-group
@@ -25,6 +22,34 @@
         </b-form-group>
 
         <b-form-group
+          id="exampleInputGroup1"
+          class="labels font-weight-bold"
+          label="Prénom"
+          label-for="exampleInput1"
+        >
+          <b-form-input
+            id="exampleInput1"
+            v-model="form.firstName"
+            type="text"
+            required
+          />
+        </b-form-group>
+
+        <b-form-group
+          id="exampleInputGroup1"
+          class="labels font-weight-bold"
+          label="Nom"
+          label-for="exampleInput1"
+        >
+          <b-form-input
+            id="exampleInput1"
+            v-model="form.lastName"
+            type="text"
+            required
+          />
+        </b-form-group>
+
+        <b-form-group
           id="password"
           class="labels font-weight-bold"
           label="Votre mot de passe"
@@ -39,16 +64,29 @@
           />
         </b-form-group>
 
+        <b-form-group
+          id="confirmPassword"
+          class="labels font-weight-bold"
+          label="Confirmez votre mot de passe"
+          label-for="confirmPassword"
+        >
+          <b-form-input
+            id="confirmPassword"
+            v-model="form.confirmPassword"
+            type="password"
+            required
+            placeholder="Mot de passe"
+          />
+        </b-form-group>
+
+
         <b-button type="submit" variant="light" class="fluid" block>
-          Se connecter
+          S'inscrire
         </b-button>
       </b-form>
       <div class="row mt-2">
-        <nuxt-link to="/signup" class="col-6 link-undecorated">
-          Je n'ai pas de compte
-        </nuxt-link>
-        <nuxt-link to="/forget" class="col-6 link-undecorated">
-          J'ai oublié mon mot de passe
+        <nuxt-link to="/login" class="col-12 link-undecorated">
+          J'ai déjà un compte
         </nuxt-link>
       </div>
     </b-card>
@@ -64,7 +102,10 @@ export default {
     return {
       form: {
         email: '',
-        password: ''
+        password: '',
+        firstName: '',
+        lastName: '',
+        passwordConfirm: ''
       },
       show: true
     }

@@ -26,6 +26,9 @@
       <nuxt-link to="/test">
         test
       </nuxt-link>
+      <nuxt-link to="/caroussel">
+        CAROUSSEL TEST
+      </nuxt-link>
     </div>
   </section>
 </template>

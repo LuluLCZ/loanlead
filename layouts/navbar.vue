@@ -9,7 +9,7 @@
 
       <b-collapse id="nav_collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item nuxt-link to="/">
+          <b-nav-item nuxt-link to="/signup">
             S'inscrire
           </b-nav-item>
           <b-nav-item nuxt-link to="/login">
@@ -48,7 +48,7 @@
               </nuxt-link>
             </b-dropdown-item>
             <b-dropdown-item>
-              <nuxt-link to="/Signup">
+              <nuxt-link to="/logout">
                 Signout
               </nuxt-link>
             </b-dropdown-item>
